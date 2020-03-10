@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 
   resources :booking, only: [:index, :show, :destroy]
 
-  get "dashboard/:id", to: "pages#dashboard"
+  get "dashboard/:id", to: "pages#dashboard", as: :dashboard
 end
