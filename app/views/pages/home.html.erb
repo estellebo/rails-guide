@@ -1,30 +1,34 @@
-<div class="contailer text-center">
+<div class="text-center">
   <div class="bg">
-        <h1 class="welcome">Welcome</h1>
-      <div class="btn">
-        <%= link_to "View all offers", offers_path, class: 'link-to-text-color' %>
-      </div>
-      <div class="btn btn-custom">
-        <%= link_to "Add an offer", new_offer_path %>
-      </div>
-  </div>
-
-  <div class="explications header-home container">
-    <div class="half-left">
-      <h1>Trouvez votre guide local</h1>
-      <p class= "subtitle"> Avec MyMap, trouvez un <i class="highlighted"> guide </i> local qui vous
-      correspond et partagez une experience unique. </p>
+    <h1 class="welcome">Welcome</h1>
+    <div class="btn">
+      <%= link_to "View all offers", offers_path, class: 'link-to-text-color' %>
     </div>
-    <div class="half-right">
+    <div class="btn btn-custom">
+      <%= link_to "Add an offer", new_offer_path %>
     </div>
   </div>
 
-  <div class="explications2 header-home container">
-    <div class="pict">
-    </div>
-    <div class="geo">
-      <h1> Localisez planifiez</h1>
-      <p> Avec MyMap vous vous pouvez localiser les guides disponibles ou planifier un rendez-vous </p>
+  <div class="container">
+    <div class="my-4">
+      <div class="explications header-home">
+        <div class="half-left">
+          <h1>Trouvez votre guide local</h1>
+          <p class= "subtitle"> Avec MyMap, trouvez un <i class="highlighted"> guide</i>  local qui vous
+          correspond et partagez une experience unique. </p>
+        </div>
+        <div class="half-right">
+        </div>
+      </div>
+
+      <div class="explications2 header-home">
+        <div class="pict">
+        </div>
+        <div class="geo">
+          <h1> Localisez planifiez</h1>
+          <p> Avec MyMap vous vous pouvez localiser les guides disponibles ou planifier un rendez-vous </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
