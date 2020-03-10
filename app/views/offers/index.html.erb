@@ -1,5 +1,20 @@
-<ul>
-  <% @offers.each do |offer| %>
-    <%= link_to offer.title, offer_path(offer) %>
-  <% end %>
-</ul>
+ <div class="explications header-home container">
+    <div class="half-left">
+      <ul>
+        <% @offers.each do |offer| %>
+        <%= link_to offer.title, offer_path(offer) %>
+        <% end %>
+      </ul>
+      <p class= "subtitle">
+      <ul>
+        <% @offers.each do |offer| %>
+        <%= link_to offer.content, offer_path(offer) %>
+        <% end %>
+      </ul>
+       </p>
+    </div>
+    <div class="half-right-2">
+    </div>
+  </div>
+
+
