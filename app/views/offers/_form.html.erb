@@ -1,0 +1,9 @@
+<%= simple_form_for (offer) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.input :city %>
+  <%= f.input :price %>
+  <%= f.input :meeting_place %>
+  <%= f.input :duration_in_hours, collection: (1..8) %>
+  <%= f.submit "Add", class: "btn btn-info" %>
+<% end %>
