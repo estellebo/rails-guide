@@ -4,7 +4,6 @@
   margin: auto;
   border-color: black;
   background-color: white;
-
 }
 
 .form-actions {
@@ -17,14 +16,15 @@
   border-color: black;
   border-radius:  27px;
   width: 170px;
+  align: center;
   &:hover {
     background-color: #d46b9b;
   }
 }
 
 .btn a {
-  color: black
-  ;
+  color: black;
+
 }
 .btn-custom{
 background-color: #ffffff00;
@@ -38,11 +38,13 @@ background-color: #ffffff00;
   font-size: 80px;
   padding-top: 20px;
   padding-bottom: 20px;
+  align: center;
+
 }
   .bg{
     background-image: asset-url('friends.png');
     height: 500px;
-    width: 2000px;
+    width: 100%;
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: center center;
