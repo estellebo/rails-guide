@@ -1,4 +1,13 @@
-<h1>Welcome</h1>
-
-<%= link_to "View all offers", offers_path %>
-<%= link_to "Add an offer", new_offer_path %>
+<div class="contailer text-center">
+  <div class="bg">
+      <div class="elements center">
+        <h1 class="welcome mt-5">Welcome</h1>
+      <div class="btn">
+        <%= link_to "View all offers", offers_path, class: 'link-to-text-color' %>
+      </div>
+      <div class="btn btn-custom">
+        <%= link_to "Add an offer", new_offer_path %>
+      </div>
+    </div>
+  </div>
+</div>
