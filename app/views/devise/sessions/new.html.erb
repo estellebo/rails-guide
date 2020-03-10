@@ -1,8 +1,8 @@
-<h2>Log in</h2>
-
+<div class="container col-6 mt-5">
+<h2 class="login text-center pt-5">Log in</h2>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
-    <%= f.input :email,
+    <%= f.input :email, placeholder: 'alan@gemail.com',
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
@@ -12,9 +12,10 @@
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in", class: 'btn btn-primary ml-3' %>
+  <div class="form-actions col-6">
+    <%= f.button :submit, "Log in", class: 'btn btn-primary ml-3 mt-1' %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
