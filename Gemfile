@@ -17,6 +17,7 @@ gem 'webpacker'
 gem 'pundit'
 
 gem 'devise'
+gem "pundit"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
