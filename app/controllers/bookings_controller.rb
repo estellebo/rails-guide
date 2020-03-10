@@ -14,7 +14,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.offer = Offer.find(params[:offer_id])
-    if @booking.date > DateTime.now && @booking.save
+    if @booking.date < DateTime.now
+      redirect_to offer_path(@booking.offer)
+      flash[:notice] = "Cette date n'est pas valide"
+    elsif @booking.save
       redirect_to dashboard_path(current_user)
     else
       redirect_to offer_path(@booking.offer)
