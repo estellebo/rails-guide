@@ -8,5 +8,5 @@ class Offer < ApplicationRecord
   validates :content, presence: true
   validates :title, presence: true
   validates :city, presence: true
-  validates :duration_in_hours, presence: true, inclusion: { in (1..8) }
+  validates :duration_in_hours, presence: true
 end
