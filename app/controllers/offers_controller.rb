@@ -1,3 +1,5 @@
+require_relative '../models/booking'
+
 class OffersController < ApplicationController
   before_action :find_offer, only: [:show, :edit, :destroy]
 
@@ -6,6 +8,8 @@ class OffersController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    @booking.offer = @offer
   end
 
   def new
@@ -15,7 +19,7 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
-    @offer.user = current.user
+    @offer.user = current_user
     if @offer.save
       redirect_to offer_path(@offer)
     else
@@ -30,7 +34,7 @@ class OffersController < ApplicationController
 
   def update
     @offer = Offer.new(offer_params)
-    @offer.user = current.user
+    @offer.user = current_user
     if @offer.save
       redirect_to offer_path(@offer)
     else
