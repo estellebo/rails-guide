@@ -1,11 +1,6 @@
 <h1>Add a new offer</h1>
 
-<%= simple_form_for (@offer) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content %>
-  <%= f.input :title %>
-  <%= f.submit "Add", class: "btn btn-info" %>
-<% end %>
+<%= render 'form', offer: @offer %>
 </br>
 
-<p><%= link_to "Cancel", dashboard_path, class: "btn btn-outline-info" %></p>
+<p><%= link_to "Cancel", dashboard_path(current_user), class: "btn btn-outline-info" %></p>

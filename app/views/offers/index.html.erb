@@ -1,5 +1,5 @@
 <ul>
   <% @offers.each do |offer| %>
-    <li><%= offer.title %></li>
+    <%= link_to offer.title, offer_path(offer) %>
   <% end %>
 </ul>
