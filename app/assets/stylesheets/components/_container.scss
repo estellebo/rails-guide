@@ -4,6 +4,7 @@
   margin: auto;
   border-color: black;
   background-color: white;
+
 }
 
 .form-actions {
@@ -11,4 +12,41 @@
   margin-left: 110px;
   width: 20px;
 }
+.btn {
+  background-color: #ffffff00;
+  border-color: black;
+  border-radius:  27px;
+  width: 170px;
+  &:hover {
+    background-color: #d46b9b;
+  }
+}
 
+.btn a {
+  color: black
+  ;
+}
+.btn-custom{
+background-color: #ffffff00;
+&:hover {
+  background-color: #4eb789;
+}
+}
+
+.welcome {
+  font-style: 20px;
+  font-size: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+  .bg{
+    background-image: asset-url('friends.png');
+    height: 500px;
+    width: 2000px;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center center;
+  }
+.elements {
+  margin-right: 580px;
+}
