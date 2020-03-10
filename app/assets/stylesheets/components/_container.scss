@@ -11,24 +11,24 @@
   width: 20px;
 }
 .btn {
-  background-color: #ffffff00;
-  border-color: black;
+  background-color: #007bff;
+  border-color: none;
   border-radius:  27px;
   width: 170px;
   align: center;
   &:hover {
-    background-color: #d46b9b;
+    background-color: #28a745;
   }
 }
 
 .btn a {
-  color: black;
+  color: white;
 
 }
 .btn-custom{
-background-color: #ffffff00;
+background-color: #007bff;
 &:hover {
-  background-color: #4eb789;
+  background-color: #28a745;
 }
 }
 
@@ -38,6 +38,8 @@ background-color: #ffffff00;
   padding-top: 20px;
   padding-bottom: 20px;
   align: center;
+  color: white;
+  font-weight: bold;
 
 }
   .bg{
@@ -81,6 +83,16 @@ background-color: #ffffff00;
 
   .half-right{
     background-image: asset-url('hobbit.png');
+    background-size: cover;
+    background-position: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 4px;
+    width: 400px;
+  }
+
+  .half-right-2 {
+    background-image: asset-url('creeks.jpg');
     background-size: cover;
     background-position: center;
     margin-top: 10px;
