@@ -5,7 +5,7 @@
 
     <div class="col-6">
       <% if current_user.offers == [] %>
-        <h1> Aucune offres </h1>
+        <h1> You have no online offers at the moment. Create one now. </h1>
       <% else %>
       <div class="dashboard-card">
         <h2>All my offers</h2>
@@ -22,22 +22,23 @@
                 <% else %>
                   <div class="bg-secondary picture" style="height: 150px;"></div>
                 <% end %>
-              <% end %>
 
               <div class="bg-light" style="height: 54px;">
                 <h6 class="p-2 text-center text-warning text-capitalize font-weight-light"><%= offer.title %></h6>
               </div>
+              <% end%>
             </div>
           </div>
           <% end %>
         </div>
 
         <% end %>
+      </br>
+        <div class="text-center">
+          <button type="button" class="btn btn-outline-warning btn-lg">Create my offer</button>
+        </div>
       </div>
 
-      <div class="text-center">
-        <button type="button" class="btn btn-outline-warning btn-lg">Create my offer</button>
-      </div>
     </div>
 
     <div class="col-6">
@@ -59,9 +60,10 @@
             <% end %>
             <% end %>
           </div>
-        </div>
-        <div class="text-center">
+        </br>
+          <div class="text-center">
           <button type="button" class="btn btn-outline-warning btn-lg">Start experience</button>
+        </div>
         </div>
       </div>
 </div>
