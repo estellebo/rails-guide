@@ -1,9 +1,32 @@
-<%= simple_form_for (offer) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content %>
-  <%= f.input :city %>
-  <%= f.input :price %>
-  <%= f.input :meeting_place %>
-  <%= f.input :duration_in_hours, collection: (1..8) %>
-  <%= f.submit "Add", class: "btn btn-info" %>
-<% end %>
+<div class="format">
+  <div class="container">
+    <%= simple_form_for (offer) do |f| %>
+      <div class="row">
+        <div class="col-6">
+          <%= f.input :title %>
+        </div>
+        <div class="col-6">
+          <%= f.input :content %>
+        </div>
+      </div>
+      <div class="row">
+      <div class="col-6">
+        <%= f.input :city %>
+      </div>
+      <div class="col-6">
+        <%= f.input :price %>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-6">
+        <%= f.input :meeting_place %>
+      </div>
+      <div class="col-6">
+        <%= f.input :duration_in_hours, collection: (1..8) %>
+      </div>
+      <div class="col">
+        <%= f.submit "Add", class: "btn btn-info" %>
+      </div>
+      <% end %>
+  </div>
+</div>
