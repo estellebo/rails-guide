@@ -4,7 +4,7 @@ class OffersController < ApplicationController
   before_action :find_offer, only: [:show, :edit, :destroy]
 
   def index
-    @offers = policy_scope(Offer)
+    policy_scope(Offer)
   end
 
   def show
@@ -57,6 +57,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:price, :meeting_place, :content, :city, :title, :duration_in_hours)
+    params.require(:offer).permit(:price, :meeting_place, :content, :city, :title, :duration_in_hours, :photo)
   end
 end

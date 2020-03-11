@@ -1,4 +1,22 @@
-<%= simple_form_for [@offer, @booking] do |f| %>
-  <%= f.input :date %>
-  <%= f.submit "Book", class: "btn btn-info" %>
-<% end %>
+<%= cl_image_tag @offer.photo.key, class: "image", crop: :fill %>
+
+<div class="container-fluid">
+
+
+
+
+  <div class="booking-form">
+    <%= simple_form_for [@offer, @booking] do |f| %>
+      <%= f.input :date %>
+      <%= f.submit "Book", class: "btn btn-warning form-control" %>
+    <% end %>
+  </div>
+
+  <h2 class="p-5"><%= @offer.title %></h2>
+
+</br></br></br></br></br></br></br></br></br></br></br></br>
+
+
+
+
+</div>
