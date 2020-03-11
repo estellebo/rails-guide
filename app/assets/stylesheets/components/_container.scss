@@ -10,7 +10,11 @@
   margin-left: 110px;
   width: 20px;
 }
-.btn {
+
+.input-group{
+  width: 100%;
+}
+.button {
   background-color: #007bff;
   border-color: none;
   border-radius:  27px;
@@ -21,102 +25,116 @@
   }
 }
 
-.btn a {
+.button a {
   color: white;
-
 }
+
 .btn-custom{
 background-color: #007bff;
-&:hover {
-  background-color: #28a745;
-}
+  &:hover {
+    background-color: #28a745;
+  }
 }
 
 .welcome {
-  font-style: 20px;
   font-size: 80px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  align: center;
   color: white;
+  text-align: left;
   font-weight: bold;
 
 }
-  .bg{
-    background-image: asset-url('friends.png');
-    height: 500px;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center center;
+
+.bg{
+  position: relative;
+  background-image: asset-url('friends.png');
+  height: 90vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+  .banner-content{
+    position:absolute;
+    width: 400px;
+    left: 20%;
+    top: 45%;
+    height: 100px;
+    margin-top: -59px;
+    margin-left: -163px;
+    .input-group{
+      width: 600px;
+    }
   }
+}
+
 .elements {
   margin-right: 580px;
 }
 
 .header-home{
   display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2em;
-    width: 100%;
-    z-index: 1;
-  }
-  .explications{
-    background-color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+  width: 100%;
+  z-index: 1;
+}
 
-  .half-left {
-    margin-top: 30px;
-    margin-bottom: 40px;
-    margin-left: 65px;  }
+.explications{
+  background-color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
-  i.highlighted {
-    background-color: #ffa5006b;
-    background-size: 240px;
-  }
+.half-left {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  margin-left: 65px;
+}
 
-  .half-right{
-    background-image: asset-url('hobbit.png');
-    background-size: cover;
-    background-position: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 4px;
-  }
+i.highlighted {
+  background-color: #ffa5006b;
+  background-size: 240px;
+}
 
-  .half-right-2 {
-    background-image: asset-url('creeks.jpg');
-    background-size: cover;
-    background-position: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 4px;
-    width: 400px;
-  }
+.half-right{
+  background-image: asset-url('hobbit.png');
+  background-size: cover;
+  background-position: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 4px;
+}
 
-  .explications2{
-    background-color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
+.half-right-2 {
+  background-image: asset-url('creeks.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 4px;
+  width: 400px;
+}
 
-  .geo {
-    width: 280px;
-    margin-top: 30px;
-    margin-bottom: 40px;
-    margin-left: 65px;
-  }
+.explications2{
+  background-color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.geo {
+  width: 280px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  margin-left: 65px;
+}
 
 
-  .pict{
-    background-image: asset-url('locate.png');
-    background-size: cover;
-    background-position: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 4px;
-    width: 400px;
-  }
+.pict{
+  background-image: asset-url('locate.png');
+  background-size: cover;
+  background-position: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 4px;
+  width: 400px;
+}
 
