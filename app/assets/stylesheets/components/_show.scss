@@ -1,17 +1,38 @@
 .image{
   width: 100%;
   height: 500px;
+  position: center center;
 }
 
 .container-fluid{
   position: relative;
   .booking-form{
-    padding: 20px 40px;
+    width: 322px;
+    height: 370px;
+    padding: 10px 20px;
     border-radius: 10px;
     background-color: #ededed;
     position: absolute;
-    top: -85px;
+    top: -117px;
     right: 46px;
     box-shadow: 1px 1px 10px 0px rgba(0,0,0,.4);
+  }
+  .link{
+    width: 322px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #ededed;
+    position: absolute;
+    top: 300px;
+    right: 46px;
+    box-shadow: 1px 1px 10px 0px rgba(0,0,0,.4);
+  }
+}
+
+.fas{
+  font-size: 25px;
+  color: grey;
+  &:hover{
+    color: black;
   }
 }

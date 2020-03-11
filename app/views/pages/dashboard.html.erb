@@ -1,5 +1,8 @@
 <div class="dashboard-content container-fluid">
+
   <h1 class="text-center font-weight-bold p-5"> <i class="far fa-calendar-alt"></i> My Dashboard </h1>
+
+
   <div class="row">
 
 
@@ -10,11 +13,11 @@
           <% if current_user.offers == [] %>
             <p class="m-4 font-weight-light text-warning"> You have no online offers at the moment. Create one now. </p>
           <% else %>
-          <% current_user.offers.each do |offer| %>
-          <div class="col-6">
-            <div class="card m-4">
+            <% current_user.offers.each do |offer| %>
+            <div class="col-6">
+              <div class="card m-4">
 
-              <%= link_to offer_path(offer) do %>
+                <%= link_to offer_path(offer) do %>
                 <% if offer.photo.attached? %>
                   <div class="card-picture">
                     <%= cl_image_tag offer.photo.key, height: 150, width: 210, crop: :fill %>
@@ -23,50 +26,60 @@
                   <div class="bg-secondary picture" style="height: 150px;"></div>
                 <% end %>
 
-              <div class="bg-light" style="height: 54px;">
-                <h6 class="p-2 text-center text-warning text-capitalize font-weight-light"><%= offer.title %></h6>
+                <div class="bg-light" style="height: 54px;">
+                  <h6 class="p-2 text-center text-warning text-capitalize font-weight-light"><%= offer.title %></h6>
+                </div>
+                <% end%>
+
               </div>
-              <% end%>
             </div>
-          </div>
+            <% end %>
           <% end %>
         </div>
 
-        <% end %>
       </br>
-        <div class="text-center">
-          <button type="button" class="btn btn-outline-warning btn-lg">Create my offer</button>
-        </div>
+
+      <div class="text-center">
+        <%= link_to new_offer_path do %>
+          <button type="button" class="btn btn-warning btn-lg form-control">Create an offer</button>
+        <% end %>
       </div>
+    </div>
 
     </div>
 
+
     <div class="col-6">
-        <div class="dashboard-card">
-          <h2>All my bookings</h2>
-          <div class="row">
-            <% if current_user.bookings == [] %>
-              <p class = "m-4 font-weight-light text-warning">You have nothing planned. Start looking for ideas for your next trip. </p>
-            <% else %>
+      <div class="dashboard-card">
+        <h2>All my bookings</h2>
+        <div class="row">
+          <% if current_user.bookings == [] %>
+            <p class = "m-4 font-weight-light text-warning">You have nothing planned. Start looking for ideas for your next trip. </p>
+          <% else %>
             <% current_user.bookings.each do |booking| %>
             <div class="col-4">
               <div class="card">
-                <%= link_to booking_path(booking) do %>
-                <p class="title"><%= booking.offer.title %> à <%= booking.offer.city %></p>
-                <p class="content"> avec <%= booking.offer.user.email %></p>
+               <%= link_to booking_path(booking) do %>
+                <p class="content"> <%= booking.offer.title %> à <%= booking.offer.city %> le <%= booking.date %> avec <%= booking.offer.user.first_name %></p>
                 <% end %>
               </div>
             </div>
             <% end %>
-            <% end %>
-          </div>
-        </br>
-          <div class="text-center">
-          <button type="button" class="btn btn-outline-warning btn-lg">Start experience</button>
+          <% end %>
         </div>
-        </div>
+
+      </br>
+
+      <div class="text-center">
+         <%= link_to root_path do %>
+          <button type="button" class="btn btn-warning btn-lg form-control">Start experience</button>
+          <% end %>
       </div>
-</div>
+    </div>
+
+    </div>
+
+  </div>
 
   </br></br></br></br>
 </div>

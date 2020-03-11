@@ -14,16 +14,91 @@
 
 
   <div class="booking-form">
+    <h2 class="text-center text-warning border-bottom pt-3 pb-3">Book this offer</h2>
+    <p class="border-bottom text-center font-weight-bold pt-3 pb-3"><%= @offer.title %> à <%= @offer.city %> by <%= @offer.user.first_name %></p>
     <%= simple_form_for [@offer, @booking] do |f| %>
-      <%= f.input :date %>
-      <%= f.submit "Book", class: "btn btn-warning form-control" %>
+      <div class="border-bottom pt-3 pb-3"><%= f.input :date %></div>
+      <div class="pt-3"><%= f.submit "Book", class: "btn btn-warning form-control" %></div>
     <% end %>
   </div>
 
-  <h2 class="p-5"><%= @offer.title %></h2>
+  <div class="link pt-4">
+    <div class="d-flex align-item-center justify-content-around">
+      <p><i class="fas fa-edit"></i></p>
+      <p><i class="fas fa-trash"></i></p>
+    </div>
+  </div>
 
-</br></br></br></br></br></br></br></br></br></br></br></br>
+<div class="row">
+  <div class="col-8">
+    <div class="pl-5 pt-4">
+      <h2 class="title pb-3">Explore <%= @offer.city %> with <%=@offer.user.first_name%></h2>
 
+      <div class="my-row border-top my-3 py-3">
+        <div class="row">
+          <div class="col-3">
+            <div class="theme m-3">
+              <p>I will show you</p>
+            </div>
+          </div>
+          <div class="col-9">
+            <div class="theme-content m-3">
+              <p><%= @offer.content %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="my-row border-top my-3 py-3">
+        <div class="row">
+          <div class="col-3">
+            <div class="theme m-3">
+              <p>For a period of</p>
+            </div>
+          </div>
+          <div class="col-9">
+            <div class="theme-content m-3">
+              <p><%= @offer.duration_in_hours %> hours</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="my-row border-top my-3 py-3">
+        <div class="row">
+          <div class="col-3">
+            <div class="theme m-3">
+              <p>Price</p>
+            </div>
+          </div>
+          <div class="col-9">
+            <div class="theme-content m-3">
+              <p><%= @offer.price %> $</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="my-row border-top my-3 py-3">
+        <div class="row">
+          <div class="col-3">
+            <div class="theme m-3">
+              <p>Meet me at</p>
+            </div>
+          </div>
+          <div class="col-9">
+            <div class="theme-content m-3">
+              <p><%= @offer.meeting_place %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+</div>
 
 
 
