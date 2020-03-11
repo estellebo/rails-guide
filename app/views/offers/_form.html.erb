@@ -25,8 +25,9 @@
       <div class="col-6">
         <%= f.input :duration_in_hours, collection: (1..8) %>
       </div>
-      <div class="col">
-        <%= f.submit "Add", class: "btn btn-info" %>
+      <div>
+        <div class="ml-3"><%= f.input :photo, as: :file %></div>
+        <%= f.submit "Add", class: "btn btn-warning form-control" %>
       </div>
       <% end %>
   </div>

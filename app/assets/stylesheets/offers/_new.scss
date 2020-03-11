@@ -4,15 +4,16 @@
   margin-bottom: 20px;
   margin-left: 800px;
   border-color: black;
-  border: 0.5px solid black;
   border-radius: 5px;
   padding: 6px;
   margin-top:80px;
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,.4);
+
 }
 
 .bgh {
   background-image: url('mongol.png');
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   background-repeat: no-repeat;
   background-size: 100% auto;
