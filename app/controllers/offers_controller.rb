@@ -4,12 +4,7 @@ class OffersController < ApplicationController
   before_action :find_offer, only: [:show, :edit, :destroy]
 
   def index
-    @query = params[:query]
-    if params[:query]
-      @offers = policy_scope(Offer.all.select { |offer| offer.city.downcase.include?(params[:query].downcase) })
-    else
-      @offers = policy_scope(Offer)
-    end
+    policy_scope(Offer)
   end
 
   def show
