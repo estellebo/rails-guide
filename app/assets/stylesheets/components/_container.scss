@@ -1,10 +1,11 @@
-.container{
-  width: 900px;
-  margin: auto;
-  border-color: black;
-  background-color: white;
-}
 
+
+.background {
+  background-color: white;
+  width: 70%;
+  display: center;
+  margin-left: 230px;
+}
 .form-actions {
   width: 6px;
   margin-left: 110px;
@@ -78,31 +79,38 @@ background-color: #007bff;
   z-index: 1;
 }
 
-.explications{
-  background-color: white;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
 
-.half-left {
-  margin-top: 30px;
-  margin-bottom: 40px;
-  margin-left: 65px;
-}
 
 i.highlighted {
   background-color: #ffa5006b;
   background-size: 240px;
 }
 
-.half-right{
+.hobbit {
   background-image: asset-url('hobbit.png');
   background-size: cover;
   background-position: center;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 4px;
+  padding-left: 25px;
 }
+
+
+
+.pict{
+  background-image: asset-url('localisation.png');
+  background-size: cover;
+  background-position: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 4px;
+  height: 260px;
+}
+
+
+
+
 
 .half-right-2 {
   background-image: asset-url('creeks.jpg');
@@ -111,30 +119,12 @@ i.highlighted {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 4px;
-  width: 400px;
+
+}
+.trouver {
+  padding-top: 57px;
 }
 
-.explications2{
-  background-color: white;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.localisez {
+  padding-top: 47px;
 }
-
-.geo {
-  width: 280px;
-  margin-top: 30px;
-  margin-bottom: 40px;
-  margin-left: 65px;
-}
-
-
-.pict{
-  background-image: asset-url('locate.png');
-  background-size: cover;
-  background-position: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 4px;
-  width: 400px;
-}
-
