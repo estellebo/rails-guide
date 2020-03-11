@@ -1,12 +1,23 @@
 <div class="text-center">
-  <div class="bg" style="margin: 0 auto;">
-        <h1 class="welcome">Welcome</h1>
-      <div class="btn">
-        <%= link_to "View all offers", offers_path, class: 'link-to-text-color' %>
+  <div class="bg" >
+    <div class="banner-content">
+      <h1 class="welcome">Welcome</h1>
+
+      <div class="input-group input-group-lg mb-3">
+        <input type="text" class="form-control" placeholder="Marseille" aria-label="city" aria-describedby="city">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="city">Discover</button>
+        </div>
       </div>
-      <div class="btn btn-custom">
-        <%= link_to "Create an offer", new_offer_path %>
+      <div class="buttons d-flex">
+        <div class="button">
+          <%= link_to "View all offers", offers_path, class: 'link-to-text-color' %>
+        </div>
+        <div class="button btn-custom">
+          <%= link_to "Create an offer", new_offer_path %>
+        </div>
       </div>
+    </div>
   </div>
 
 
