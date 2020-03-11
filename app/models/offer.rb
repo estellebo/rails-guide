@@ -1,6 +1,10 @@
 class Offer < ApplicationRecord
+  # geocoded_by :meeting_place
+  # after_validation :geocode, if: :will_save_change_to_meeting_place?
+
   belongs_to :user
   has_one :booking
+  has_one_attached :photo
 
   validates :user, presence: true
   validates :meeting_place, presence: true

@@ -5,5 +5,6 @@
   <%= f.input :price %>
   <%= f.input :meeting_place %>
   <%= f.input :duration_in_hours, collection: (1..8) %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit "Add", class: "btn btn-info" %>
 <% end %>

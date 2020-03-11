@@ -4,7 +4,12 @@ class OffersController < ApplicationController
   before_action :find_offer, only: [:show, :edit, :destroy]
 
   def index
-    @offers = policy_scope(Offer)
+    @query = params[:query]
+    if params[:query]
+      @offers = policy_scope(Offer.all.select { |offer| offer.city.downcase.include?(params[:query].downcase) })
+    else
+      @offers = policy_scope(Offer)
+    end
   end
 
   def show
@@ -57,6 +62,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:price, :meeting_place, :content, :city, :title, :duration_in_hours)
+    params.require(:offer).permit(:price, :meeting_place, :content, :city, :title, :duration_in_hours, :photo)
   end
 end
