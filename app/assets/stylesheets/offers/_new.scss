@@ -1,29 +1,21 @@
-.contour {
-  background-color: white;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 800px;
-  border-color: black;
-  border-radius: 5px;
-  padding: 6px;
-  margin-top:80px;
-  box-shadow: 1px 1px 8px 3px rgba(0,0,0,.4);
-
-}
-
 .bgh {
-  background-image: url('mongol3.jpg');
-  height: 100vh;
+  padding-top: 60px;
+  margin: 0;
+  background-image: url('mongolfière.jpeg');
+  height: 93vh;
   width: 100%;
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center center;
   position: relative;
-}
-
-.btn-outline-info{
-  margin-left: 800px;
-  color: black;
+  .contour {
+    width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 1px 1px 8px 3px rgba(0,0,0,.4);
+  }
 }
 
 .presentation{
