@@ -4,12 +4,12 @@
 
 
     <div class="col-6">
-      <% if current_user.offers == [] %>
-        <h1> You have no online offers at the moment. Create one now. </h1>
-      <% else %>
       <div class="dashboard-card">
         <h2>All my offers</h2>
         <div class="row">
+          <% if current_user.offers == [] %>
+            <p class="m-4 font-weight-light text-warning"> You have no online offers at the moment. Create one now. </p>
+          <% else %>
           <% current_user.offers.each do |offer| %>
           <div class="col-6">
             <div class="card m-4">

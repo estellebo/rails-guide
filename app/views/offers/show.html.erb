@@ -1,4 +1,12 @@
-<%= cl_image_tag @offer.photo.key, class: "image", crop: :fill %>
+<% if @offer.photo.attached? %>
+
+  <%= cl_image_tag @offer.photo.key, class: "image", crop: :fill %>
+
+<% else %>
+
+    </br></br></br></br>  </br></br></br></br>   </br></br></br></br>
+
+<% end %>
 
 <div class="container-fluid">
 
