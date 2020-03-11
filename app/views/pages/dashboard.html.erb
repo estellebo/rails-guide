@@ -1,35 +1,55 @@
-<div class="container mt-3">
-  <h1 class="text-center p-3"> My Dashboard </h1>
-
-  <h2>All my offers</h2>
+<div class="dashboard-content container-fluid">
+  <h1 class="text-center p-5"> My Dashboard </h1>
   <div class="row">
-      <% current_user.offers.each do |offer| %>
-      <div class="col-4">
-        <div class="card">
-          <% if policy(offer).show? %>
-            <%= link_to offer_path(offer) do %>
-              <h5 class="title"><%= offer.title %> à <%= offer.city %></i></h5>
-              <p class="content"><%= offer.content %></p>
-              <p><i class="fas fa-dollar-sign"></i> <%= offer.price %></p>
-            <% end %>
+
+
+    <div class="col-6">
+      <div class="dashboard-card">
+        <h2>All my offers</h2>
+        <div class="row">
+          <% current_user.offers.each do |offer| %>
+          <div class="col-6">
+            <div class="card m-4">
+
+              <%= link_to offer_path(offer) do %>
+                <% if offer.photo.attached? %>
+                  <div class="card-picture">
+                    <%= cl_image_tag offer.photo.key, height: 150, width: 210, crop: :fill %>
+                  </div>
+                <% else %>
+                  <div class="bg-secondary picture" style="height: 150px;"></div>
+                <% end %>
+              <% end %>
+
+              <div class="bg-light" style="height: 54px;">
+                <h6 class="p-2 text-center text-uppercase font-weight-bold"><%= offer.title %></h6>
+              </div>
+            </div>
+          </div>
           <% end %>
         </div>
       </div>
-      <% end %>
-  </div>
+    </div>
 
-
-  <h2>All my bookings</h2>
-  <div class="row">
-      <% current_user.bookings.each do |booking| %>
-      <div class="col-4">
-        <div class="card">
-          <%= link_to booking_path(booking) do %>
-          <p class="title"><%= booking.offer.title %> à <%= booking.offer.city %></p>
-          <p class="content"> avec <%= booking.offer.user.email %></p>
-        <% end %>
+    <div class="col-6">
+      <div class="dashboard-card">
+        <h2>All my bookings</h2>
+        <div class="row">
+          <% current_user.bookings.each do |booking| %>
+          <div class="col-4">
+            <div class="card">
+              <%= link_to booking_path(booking) do %>
+              <p class="title"><%= booking.offer.title %> à <%= booking.offer.city %></p>
+              <p class="content"> avec <%= booking.offer.user.email %></p>
+              <% end %>
+            </div>
+          </div>
+          <% end %>
         </div>
       </div>
-      <% end %>
+    </div>
+
+
   </div>
 </div>
+
