@@ -5,13 +5,13 @@
         <h2 class="welcome font-weight-light">FIND A LOCAL</h2>
         <h4 class="text-left text-white pb-2"> A new experience with a local expert</h4>
       </div>
-      <%= form_tag offers_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Marseille"
-        %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <%= form_tag offers_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Marseille"
+          %>
+          <%= submit_tag "Search", class: "left-block m-3 btn btn-primary" %>
       <% end %>
     </div>
   </div>
