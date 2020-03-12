@@ -1,18 +1,170 @@
- <div class="explications header-home container">
-    <div class="half-left">
-      <ul>
-        <% @offers.each do |offer| %>
-        <%= link_to offer.title, offer_path(offer) %>
-        <% end %>
-      </ul>
-      <p class= "subtitle">
-      <ul>
-        <% @offers.each do |offer| %>
-        <%= link_to offer.content, offer_path(offer) %>
-        <% end %>
-      </ul>
-       </p>
+<div class="container-fluid">
+
+  <div class="row">
+
+
+    <div class="col-8">
+
+
+      <div class="cards">
+
+        <% if @params %>
+
+          <% if @offers.count != 0 %>
+
+          <% if @offers.count == 1 %>
+          <h2 class="p-3 font-weight-light text-warning">Explore <%= @params %>, with our only MyWay local...</h2>
+          <% else %>
+          <h2 class="p-3 font-weight-light text-warning">Explore <%= @params %>, with one of <%= @offers.count %> MyWay locals...</h2>
+          <% end %>
+          <% @offers.each_with_index do |offer, index| %>
+          <% if index.odd? %>
+
+          <div class="blog-card">
+            <div class="meta">
+              <div class="photo" style="background-image: url(<%= cl_image_path offer.photo.key, height: 300, width: 400, crop: :fill %>)"></div>
+              <div class="details">
+                <div class="profil">
+                  <div class ="rounded-circle text-center p-2">
+                    <%= cl_image_tag current_user.photo.key, height: 100, width: 100, crop: :fill, class: "rounded-circle opacity"%>
+                    <h5 class="p-3 author"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="description">
+              <h1><%= offer.title %></h1>
+              <h2><%= offer.city %></h2>
+              <p><%= offer.content %></p>
+              <p class="read-more">
+                <%= link_to "Read More", offer_path(offer) %>
+              </p>
+            </div>
+          </div>
+
+          <% else %>
+
+          <div class="blog-card alt">
+            <div class="meta">
+              <div class="photo" style="background-image: url(<%= cl_image_path offer.photo.key, height: 300, width: 400, crop: :fill %>)"></div>
+              <div class="details">
+                <div class="profil">
+                  <div class ="rounded-circle text-center p-3">
+                    <%= cl_image_tag current_user.photo.key, height: 100, width: 100, crop: :fill, class: "rounded-circle opacity"%>
+                    <h5 class="p-3 author"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="description">
+              <h1><%= offer.title %></h1>
+              <h2><%= offer.city %></h2>
+              <p><%= offer.content %></p>
+              <p class="read-more">
+                <%= link_to "Read More", offer_path(offer) %>
+              </p>
+            </div>
+          </div>
+
+          <% end %>
+
+          <% end %>
+          <% else %>
+
+          <h2 class="p-3 font-weight-light text-warning">We're sorry, there is no guide for <%= @params %>...</h2>
+
+          <% end %>
+        </div>
+
+
+
+
+        <% else %>
+
+
+
+          <% if @offers.count != 0 %>
+
+          <% if @offers.count == 1 %>
+          <h2 class="p-3 font-weight-light text-warning">Explore the world, with our only MyWay local...</h2>
+          <% else %>
+          <h2 class="p-3 font-weight-light text-warning">Explore the world, with one of <%= @offers.count %> MyWay locals...</h2>
+          <% end %>
+          <% @offers.each_with_index do |offer, index| %>
+          <% if index.odd? %>
+
+          <div class="blog-card">
+            <div class="meta">
+              <div class="photo" style="background-image: url(<%= cl_image_path offer.photo.key, height: 300, width: 400, crop: :fill %>)"></div>
+              <div class="details">
+                <div class="profil">
+                  <div class ="rounded-circle text-center p-2">
+                    <%= cl_image_tag current_user.photo.key, height: 100, width: 100, crop: :fill, class: "rounded-circle opacity"%>
+                    <h5 class="p-3 author"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="description">
+              <h1><%= offer.title %></h1>
+              <h2><%= offer.city %></h2>
+              <p><%= offer.content %></p>
+              <p class="read-more">
+                <%= link_to "Read More", offer_path(offer) %>
+              </p>
+            </div>
+          </div>
+
+          <% else %>
+
+          <div class="blog-card alt">
+            <div class="meta">
+              <div class="photo" style="background-image: url(<%= cl_image_path offer.photo.key, height: 300, width: 400, crop: :fill %>)"></div>
+              <div class="details">
+                <div class="profil">
+                  <div class ="rounded-circle text-center p-3">
+                    <%= cl_image_tag current_user.photo.key, height: 100, width: 100, crop: :fill, class: "rounded-circle opacity"%>
+                    <h5 class="p-3 author"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="description">
+              <h1><%= offer.title %></h1>
+              <h2><%= offer.city %></h2>
+              <p><%= offer.content %></p>
+              <p class="read-more">
+                <%= link_to "Read More", offer_path(offer) %>
+              </p>
+            </div>
+          </div>
+
+          <% end %>
+
+          <% end %>
+          <% else %>
+
+          <h2 class="p-3 font-weight-light text-warning">We're sorry, there is no guide yet..</h2>
+
+          <% end %>
+        </div>
+
+
+        <% end  %>
+
+
     </div>
-    <div class="half-right-2">
+
+
+    <div class="col-4">
+
+      <div class="geocode">
+
+      </div>
+
     </div>
+
+
   </div>
+</div>
+
