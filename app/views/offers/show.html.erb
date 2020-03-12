@@ -24,8 +24,21 @@
 
   <div class="link pt-4">
     <div class="d-flex align-item-center justify-content-around">
-      <p><i class="fas fa-edit"></i></p>
-      <p><i class="fas fa-trash"></i></p>
+
+      <% if policy(@offer).edit? %>
+        <% link_to edit_offer_path(@offer) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      <% end %>
+
+      <% if policy(@offer).destroy? %>
+        <%= link_to offer_path,
+          method: :delete,
+          data: { confirm: "Are you sure?" } do %>
+          <i class="las la-trash-alt"></i>
+        <% end %>
+      <% end %>
+
     </div>
   </div>
 
