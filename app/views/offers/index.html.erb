@@ -6,9 +6,15 @@
     <div class="col-8">
 
       <div class="cards">
+
+
+        <% @offers.each_with_index do |offer, index| %>
+
+        <% if index.odd? %>
+
         <div class="blog-card">
           <div class="meta">
-            <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+            <div class="photo" style="background-image: url(<%= cl_image_path offer.photo.key, height: 300, width: 400, crop: :fill %>)"></div>
             <ul class="details">
               <li class="author"><a href="#">John Doe</a></li>
               <li class="date">Aug. 24, 2015</li>
@@ -23,7 +29,7 @@
             </ul>
           </div>
           <div class="description">
-            <h1>Learning to Code</h1>
+            <h1>offer.title</h1>
             <h2>Opening a door to the future</h2>
             <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
             <p class="read-more">
@@ -31,9 +37,12 @@
             </p>
           </div>
         </div>
+
+        <% else %>
+
         <div class="blog-card alt">
           <div class="meta">
-            <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)"></div>
+            <div class="photo" style="background-image: url(<%= cl_image_path offer.photo.key, height: 300, width: 400, crop: :fill %>)"></div>
             <ul class="details">
               <li class="author"><a href="#">Jane Doe</a></li>
               <li class="date">July. 15, 2015</li>
@@ -56,6 +65,10 @@
           </div>
         </div>
       </div>
+
+      <% end %>
+
+      <% end %>
 
     </div>
 
