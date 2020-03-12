@@ -13,13 +13,13 @@ class Offer < ApplicationRecord
   has_one :booking
 
   has_one_attached :photo
-  # validates :photo, attached: true
+  validates :photo, attached: true
 
-  # validates :user, presence: true
-  # validates :meeting_place, presence: true
-  # validates :price, presence: true
-  # validates :content, presence: true
-  # validates :title, presence: true
-  # validates :city, presence: true
-  # validates :duration_in_hours, presence: true
+  validates :user, presence: true
+  validates :meeting_place, presence: true
+  validates :price, presence: true
+  validates :content, presence: true
+  validates :title, presence: true
+  validates :city, presence: true
+  validates :duration_in_hours, presence: true
 end
