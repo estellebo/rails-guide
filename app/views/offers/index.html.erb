@@ -23,25 +23,21 @@
           <div class="blog-card">
             <div class="meta">
               <div class="photo" style="background-image: url(<%= cl_image_path offer.photo.key, height: 300, width: 400, crop: :fill %>)"></div>
-              <ul class="details">
-                <li class="author"><a href="#">John Doe</a></li>
-                <li class="date">Aug. 24, 2015</li>
-                <li class="tags">
-                  <ul>
-                    <li><a href="#">Learn</a></li>
-                    <li><a href="#">Code</a></li>
-                    <li><a href="#">HTML</a></li>
-                    <li><a href="#">CSS</a></li>
-                  </ul>
-                </li>
-              </ul>
+              <div class="details">
+                <div class="profil">
+                  <div class ="rounded-circle text-center p-2">
+                    <%= cl_image_tag current_user.photo.key, height: 100, width: 100, crop: :fill, class: "rounded-circle opacity"%>
+                    <h5 class="p-3 author"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="description">
-              <h1>offer.title</h1>
-              <h2>Opening a door to the future</h2>
-              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+              <h1><%= offer.title %></h1>
+              <h2><%= offer.city %></h2>
+              <p><%= offer.content %></p>
               <p class="read-more">
-                <a href="#">Read More</a>
+                <%= link_to "Read More", offer_path(offer) %>
               </p>
             </div>
           </div>
@@ -51,24 +47,21 @@
           <div class="blog-card alt">
             <div class="meta">
               <div class="photo" style="background-image: url(<%= cl_image_path offer.photo.key, height: 300, width: 400, crop: :fill %>)"></div>
-              <ul class="details">
-                <li class="author"><a href="#">Jane Doe</a></li>
-                <li class="date">July. 15, 2015</li>
-                <li class="tags">
-                  <ul>
-                    <li><a href="#">Learn</a></li>
-                    <li><a href="#">Code</a></li>
-                    <li><a href="#">JavaScript</a></li>
-                  </ul>
-                </li>
-              </ul>
+              <div class="details">
+                <div class="profil">
+                  <div class ="rounded-circle text-center p-3">
+                    <%= cl_image_tag current_user.photo.key, height: 100, width: 100, crop: :fill, class: "rounded-circle opacity"%>
+                    <h5 class="p-3 author"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="description">
-              <h1>Mastering the Language</h1>
-              <h2>Java is not the same as JavaScript</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+              <h1><%= offer.title %></h1>
+              <h2><%= offer.city %></h2>
+              <p><%= offer.content %></p>
               <p class="read-more">
-                <a href="#">Read More</a>
+                <%= link_to "Read More", offer_path(offer) %>
               </p>
             </div>
           </div>
@@ -103,14 +96,21 @@
           <div class="blog-card">
             <div class="meta">
               <div class="photo" style="background-image: url(<%= cl_image_path offer.photo.key, height: 300, width: 400, crop: :fill %>)"></div>
-                <h4 class="author"><%= current_user.first_name %> <%= current_user.last_name %></h4>
+              <div class="details">
+                <div class="profil">
+                  <div class ="rounded-circle text-center p-2">
+                    <%= cl_image_tag current_user.photo.key, height: 100, width: 100, crop: :fill, class: "rounded-circle opacity"%>
+                    <h5 class="p-3 author"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="description">
-              <h1>offer.title</h1>
-              <h2>Opening a door to the future</h2>
-              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+              <h1><%= offer.title %></h1>
+              <h2><%= offer.city %></h2>
+              <p><%= offer.content %></p>
               <p class="read-more">
-                <a href="#">Read More</a>
+                <%= link_to "Read More", offer_path(offer) %>
               </p>
             </div>
           </div>
@@ -120,24 +120,21 @@
           <div class="blog-card alt">
             <div class="meta">
               <div class="photo" style="background-image: url(<%= cl_image_path offer.photo.key, height: 300, width: 400, crop: :fill %>)"></div>
-              <ul class="details">
-                <li class="author"><a href="#">Jane Doe</a></li>
-                <li class="date">July. 15, 2015</li>
-                <li class="tags">
-                  <ul>
-                    <li><a href="#">Learn</a></li>
-                    <li><a href="#">Code</a></li>
-                    <li><a href="#">JavaScript</a></li>
-                  </ul>
-                </li>
-              </ul>
+              <div class="details">
+                <div class="profil">
+                  <div class ="rounded-circle text-center p-3">
+                    <%= cl_image_tag current_user.photo.key, height: 100, width: 100, crop: :fill, class: "rounded-circle opacity"%>
+                    <h5 class="p-3 author"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="description">
-              <h1>Mastering the Language</h1>
-              <h2>Java is not the same as JavaScript</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+              <h1><%= offer.title %></h1>
+              <h2><%= offer.city %></h2>
+              <p><%= offer.content %></p>
               <p class="read-more">
-                <a href="#">Read More</a>
+                <%= link_to "Read More", offer_path(offer) %>
               </p>
             </div>
           </div>
@@ -170,3 +167,4 @@
 
   </div>
 </div>
+
