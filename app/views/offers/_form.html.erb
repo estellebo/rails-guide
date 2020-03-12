@@ -1,33 +1,18 @@
 
-<div class="format">
-  <div class="container">
-    <%= simple_form_for (offer) do |f| %>
-      <div class="row">
-        <div class="col-6">
-          <%= f.input :title %>
-        </div>
-        <div class="col-6">
-          <%= f.input :content %>
-        </div>
-      </div>
-      <div class="row">
-      <div class="col-6">
-        <%= f.input :city %>
-      </div>
-      <div class="col-6">
-        <%= f.input :price %>
-      </div>
-      </div>
-      <div class="row">
-      <div class="col-6">
-        <%= f.input :meeting_place %>
-      </div>
-      <div class="col-6">
-        <%= f.input :duration_in_hours, collection: (1..8) %>
-      </div>
-      <div class="col">
-        <%= f.submit "Add", class: "btn btn-info" %>
-      </div>
-      <% end %>
+<%= simple_form_for (offer) do |f| %>
+<div class="d-flex justify-content-around border-top pt-3 mt-3">
+  <div>
+    <%= f.input :title, placeholder: 'Visite des calanques de Marseille'%>
+    <%= f.input :content, placeholder: '...' %>
+    <%= f.input :city, placeholder: 'Marseille' %>
+  </div>
+  <div>
+    <%= f.input :price, placeholder: '20' %>
+    <%= f.input :meeting_place, placeholder: 'Vieux Port, Marseille'%>
+    <%= f.input :duration_in_hours, collection: (1..8), placeholder: '2' %>
   </div>
 </div>
+  <div class=" border-bottom border-top m-4 p-3"><%= f.input :photo, as: :file %></div>
+  <%= f.submit "Add", class: "btn btn-warning form-control" %>
+  <% end %>
+

@@ -1,4 +1,15 @@
+.container{
+  width: 600px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,.4);
+}
 
+.page{
+  height: 93vh;
+  padding: 170px;
+}
 
 .background {
   background-color: white;
@@ -88,10 +99,10 @@ i.highlighted {
 }
 
 .hobbit {
-  background-image: asset-url('hobbit.png');
+  background-image: url('hobbit.png');
   background-size: cover;
   background-position: center;
-  margin-top: 10px;
+  height: 100%;
   margin-bottom: 10px;
   margin-right: 4px;
   padding-left: 25px;
@@ -100,10 +111,9 @@ i.highlighted {
 
 
 .pict{
-  background-image: asset-url('localisation.png');
+  background-image: url('localisation.png');
   background-size: cover;
   background-position: center;
-  margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 4px;
   height: 260px;
@@ -122,10 +132,4 @@ i.highlighted {
   margin-right: 4px;
 
 }
-.trouver {
-  padding-top: 57px;
-}
 
-.localisez {
-  padding-top: 47px;
-}
