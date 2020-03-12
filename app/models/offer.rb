@@ -1,6 +1,7 @@
 class Offer < ApplicationRecord
-  # geocoded_by :meeting_place
-  # after_validation :geocode, if: :will_save_change_to_meeting_place?
+  geocoded_by :meeting_place
+  after_validation :geocode, if: :will_save_change_to_meeting_place?
+
   include PgSearch::Model
   pg_search_scope :search_by_city_and_meeting_place,
     against: [ :city, :meeting_place ],
@@ -12,7 +13,7 @@ class Offer < ApplicationRecord
   has_one :booking
 
   has_one_attached :photo
-  validates :photo, presence: true
+  validates :photo, attached: true
 
   validates :user, presence: true
   validates :meeting_place, presence: true

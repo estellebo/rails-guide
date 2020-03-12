@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_one_attached :photo
+  validates :photo, attached: true
   has_many :offers
   has_many :bookings
 

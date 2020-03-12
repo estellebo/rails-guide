@@ -10,6 +10,16 @@ class OffersController < ApplicationController
     else
       @offers = policy_scope(Offer)
     end
+
+    # @offers_p = Offer.geocoded #returns flats with coordinates
+
+    @markers = @offers.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { offer: offer })
+      }
+    end
   end
 
   def show
@@ -43,7 +53,7 @@ class OffersController < ApplicationController
     if @offer.save
       redirect_to offer_path(@offer)
     else
-      render :new
+      render :edit
     end
     authorize @offer
   end
