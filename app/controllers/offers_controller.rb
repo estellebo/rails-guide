@@ -43,7 +43,7 @@ class OffersController < ApplicationController
     if @offer.save
       redirect_to offer_path(@offer)
     else
-      render :new
+      render :edit
     end
     authorize @offer
   end
