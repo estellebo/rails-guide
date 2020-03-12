@@ -4,7 +4,11 @@ class OffersController < ApplicationController
   before_action :find_offer, only: [:show, :edit, :destroy]
 
   def index
-    policy_scope(Offer)
+    if params[:query]
+      @offers = policy_scope(Offer.search_by_city_and_meeting_place(params[:query]))
+    else
+      @offers = policy_scope(Offer)
+    end
   end
 
   def show

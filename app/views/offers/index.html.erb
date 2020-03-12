@@ -1,18 +1,86 @@
- <div class="explications header-home container">
-    <div class="half-left">
-      <ul>
-        <% @offers.each do |offer| %>
-        <%= link_to offer.title, offer_path(offer) %>
-        <% end %>
-      </ul>
-      <p class= "subtitle">
-      <ul>
-        <% @offers.each do |offer| %>
-        <%= link_to offer.content, offer_path(offer) %>
-        <% end %>
-      </ul>
-       </p>
+<div class="container-fluid">
+
+  <div class="row">
+
+
+    <div class="col-8">
+
+      <div class="cards">
+
+
+        <% @offers.each_with_index do |offer, index| %>
+
+        <% if index.odd? %>
+
+        <div class="blog-card">
+          <div class="meta">
+            <div class="photo" style="background-image: url(<%= cl_image_path offer.photo.key, height: 300, width: 400, crop: :fill %>)"></div>
+            <ul class="details">
+              <li class="author"><a href="#">John Doe</a></li>
+              <li class="date">Aug. 24, 2015</li>
+              <li class="tags">
+                <ul>
+                  <li><a href="#">Learn</a></li>
+                  <li><a href="#">Code</a></li>
+                  <li><a href="#">HTML</a></li>
+                  <li><a href="#">CSS</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="description">
+            <h1>offer.title</h1>
+            <h2>Opening a door to the future</h2>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+            <p class="read-more">
+              <a href="#">Read More</a>
+            </p>
+          </div>
+        </div>
+
+        <% else %>
+
+        <div class="blog-card alt">
+          <div class="meta">
+            <div class="photo" style="background-image: url(<%= cl_image_path offer.photo.key, height: 300, width: 400, crop: :fill %>)"></div>
+            <ul class="details">
+              <li class="author"><a href="#">Jane Doe</a></li>
+              <li class="date">July. 15, 2015</li>
+              <li class="tags">
+                <ul>
+                  <li><a href="#">Learn</a></li>
+                  <li><a href="#">Code</a></li>
+                  <li><a href="#">JavaScript</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="description">
+            <h1>Mastering the Language</h1>
+            <h2>Java is not the same as JavaScript</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+            <p class="read-more">
+              <a href="#">Read More</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <% end %>
+
+      <% end %>
+
     </div>
-    <div class="half-right-2">
+
+
+    <div class="col-4">
+
+      <div class="geocode">
+
+      </div>
+
     </div>
+
+
   </div>
+</div>

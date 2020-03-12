@@ -5,10 +5,14 @@
         <h2 class="welcome font-weight-light">FIND A LOCAL</h2>
         <h4 class="text-left text-white pb-2"> A new experience with a local expert</h4>
       </div>
-      <form class="form-inline mb-4">
-        <input class="form-control sm-2" name="query" placeholder="Marseille" aria-label="Search">
-        <button class="btn btn-secondary discover-btn my-2 my-sm-0" type="submit">Discover</button>
-      </form>
+      <%= form_tag offers_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Marseille"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
 
     </div>
   </div>
