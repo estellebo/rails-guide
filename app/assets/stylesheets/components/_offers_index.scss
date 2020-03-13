@@ -7,6 +7,10 @@ $color_prime: #0A7B93;
 $color_grey: #e2e2e2;
 $color_grey_dark: #a2a2a2;
 
+.container-fluid{
+  background-color: #F4F4F4;
+}
+
 .blog-card {
   display: flex;
   flex-direction: column;
@@ -27,7 +31,8 @@ $color_grey_dark: #a2a2a2;
   }
   &:hover {
     .photo {
-      transform: scale(1.3) rotate(2deg);
+      transform: scale(1.3) rotate(1deg);
+      filter: blur(4px) grayscale(20%);
     }
   }
   .meta {
@@ -47,7 +52,7 @@ $color_grey_dark: #a2a2a2;
   }
   .details{
     margin: auto;
-    padding: 0;
+    padding: 20;
     list-style: none;
   }
 
@@ -58,15 +63,13 @@ $color_grey_dark: #a2a2a2;
     left: -100%;
     margin: auto;
     transition: left .2s;
-    background: rgba(220, 220, 220, .8);
-    padding: 10px;
+    // background: rgba(220, 220, 220, .8);
     width: 100%;
     font-size: .9rem;
     .author:before {
       font-family: FontAwesome;
       margin-right: 10px;
     }
-
     .date:before {
       font-family: FontAwesome;
       margin-right: 10px;
@@ -118,6 +121,9 @@ $color_grey_dark: #a2a2a2;
           margin-left: 5px;
           opacity: 1;
         }
+      &:hover{
+        color: #085D70;
+      }
       }
     }
   }

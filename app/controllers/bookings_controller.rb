@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
       redirect_to offer_path(@booking.offer)
       flash[:notice] = "Cette date n'est pas valide"
     elsif @booking.save
-      redirect_to dashboard_path(current_user)
+      redirect_to booking_path(@booking)
     else
       redirect_to offer_path(@booking.offer)
       flash[:notice] = "Cette date n'est pas disponible"
@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
-  def delete
+  def destroy
     @booking.destroy
 
     redirect_to dashboard_path
