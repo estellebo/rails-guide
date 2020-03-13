@@ -1,27 +1,40 @@
-<% if @offer.photo.attached? %>
+<div class="img-show">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <% @offer.photos.each_with_index do |photo, index| %>
+      <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
+        <%= cl_image_tag photo.key, class: "image", crop: :fill %>
+      </div>
+      <% end %>
+    </div>
+    <a class="carousel-control-prev pr-5 mr-5" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next pl-5 mr-5" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
 
-  <%= cl_image_tag @offer.photo.key, class: "image", crop: :fill %>
-
-<% else %>
-
-    </br></br></br></br>  </br></br></br></br>   </br></br></br></br>
-
-<% end %>
-
-<div class="container-fluid">
 
 
+<div class="container-fluid pb-4">
+
+  <%= cl_image_tag @offer.user.photo.key, class: 'user-show'%>
 
 
   <div class="booking-form">
+
     <h2 class="text-center text-warning border-bottom pt-3 pb-3">Book this offer</h2>
     <p class="border-bottom text-center font-weight-bold pt-3 pb-3"><%= @offer.title %> à <%= @offer.city %> by <%= @offer.user.first_name %></p>
     <%= simple_form_for [@offer, @booking] do |f| %>
-      <div class="border-bottom pt-3 pb-3"><%= f.input :date %></div>
+      <div class="border-bottom  pt-3 pb-3"><%= f.input :date, placeholder: "2020-03-13", as: :string, required: false, input_html: {class: "datepicker"}%></div>
       <div class="pt-3"><%= f.submit "Book", class: "btn btn-warning form-control" %></div>
     <% end %>
   </div>
-
+<% if policy(@offer).edit? %>
   <div class="link pt-4">
     <div class="d-flex align-item-center justify-content-around">
 
@@ -41,10 +54,11 @@
 
     </div>
   </div>
+<% end%>
 
 <div class="row">
   <div class="col-8">
-    <div class="pl-5 pt-4">
+    <div class="pl-5 pt-4 mt-5">
       <h2 class="title pb-3">Explore <%= @offer.city %> with <%=@offer.user.first_name%></h2>
 
       <div class="my-row border-top my-3 py-3">

@@ -2,7 +2,6 @@
 
 
 
-
   <% if @params %>
 
   <% if @offers.count != 0 %>
@@ -10,6 +9,20 @@
 
   <div class="row">
     <div class="col-7">
+
+      <div class="m-4">
+      <%= form_tag offers_path, method: :get do %>
+        <div class="d-flex">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Marseille"
+          %>
+          <%= submit_tag "Search", class: "btn btn-warning" %>
+
+        </div>
+      <% end %>
+      </div>
       <div class="cards">
         <% if @offers.count == 1 %>
         <h2 class="p-3 font-weight-light text-warning">Explore <%= @params %>, with our only MyWay local...</h2>
@@ -21,12 +34,12 @@
 
         <div class="blog-card">
           <div class="meta">
-            <div class="photo" style="background-image: url(<%= cl_image_path offer.photo.key, height: 300, width: 400, crop: :fill %>)"></div>
+            <div class="photo" style="background-image: url(<%= cl_image_path offer.photos.first.key, height: 300, width: 400, crop: :fill %>)"></div>
             <div class="details">
               <div class="profil">
-                <div class ="rounded-circle text-center p-2">
-                  <%= cl_image_tag current_user.photo.key, height: 100, width: 100, crop: :fill, class: "rounded-circle opacity"%>
-                  <h5 class="p-3 author"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+                <div class ="text-center p-2">
+                  <%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :fill, class: "rounded-circle"%>
+                  <h5 class="p-3 text-white author"><%= offer.user.first_name %> <%= offer.user.last_name %></h5>
                 </div>
               </div>
             </div>
@@ -45,12 +58,12 @@
 
         <div class="blog-card alt">
           <div class="meta">
-            <div class="photo" style="background-image: url(<%= cl_image_path offer.photo.key, height: 300, width: 400, crop: :fill %>)"></div>
+            <div class="photo" style="background-image: url(<%= cl_image_path offer.photos.first.key, height: 300, width: 400, crop: :fill %>)"></div>
             <div class="details">
               <div class="profil">
                 <div class ="rounded-circle text-center p-3">
-                  <%= cl_image_tag current_user.photo.key, height: 100, width: 100, crop: :fill, class: "rounded-circle opacity"%>
-                  <h5 class="p-3 author"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+                  <%= cl_image_tag offer.user.photo.key, height: 80, width: 80, crop: :fill, class: "rounded-circle opacity"%>
+                  <h5 class="p-3 text-white author"><%= offer.user.first_name %> <%= offer.user.last_name %></h5>
                 </div>
               </div>
             </div>
@@ -76,8 +89,7 @@
       <div class="geocode">
         <div
         id="map"
-        style="width: 100%;
-        height: 650px;"
+        style="width: 580px; height: 650px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
@@ -90,6 +102,20 @@
 
 <% else %>
 
+<div class="m-4">
+<%= form_tag offers_path, method: :get do %>
+  <div class="d-flex">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Marseille"
+    %>
+    <%= submit_tag "Search", class: "btn btn-warning" %>
+
+  </div>
+<% end %>
+</div>
+
 <h2 class="p-3 font-weight-light text-warning">We're sorry, there is no guide for <%= @params %>...</h2>
 
 <% end %>
@@ -99,6 +125,19 @@
 
 <div class="row">
   <div class="col-7">
+    <div class="m-4">
+    <%= form_tag offers_path, method: :get do %>
+      <div class="d-flex">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Marseille"
+        %>
+        <%= submit_tag "Search", class: "btn btn-warning" %>
+
+      </div>
+    <% end %>
+    </div>
     <div class="cards">
 
       <% if @offers.count != 0 %>
@@ -113,12 +152,12 @@
 
       <div class="blog-card">
         <div class="meta">
-          <div class="photo" style="background-image: url(<%= cl_image_path offer.photo.key, height: 300, width: 400, crop: :fill %>)"></div>
+          <div class="photo" style="background-image: url(<%= cl_image_path offer.photos.first.key, height: 300, width: 400, crop: :fill %>)"></div>
           <div class="details">
             <div class="profil">
               <div class ="rounded-circle text-center p-2">
-                <%= cl_image_tag current_user.photo.key, height: 100, width: 100, crop: :fill, class: "rounded-circle opacity"%>
-                <h5 class="p-3 author"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+                <%= cl_image_tag offer.user.photo.key, height: 80, width: 80, crop: :fill, class: "rounded-circle opacity"%>
+                <h5 class="p-3 text-white author"><%= offer.user.first_name %> <%= offer.user.last_name %></h5>
               </div>
             </div>
           </div>
@@ -137,12 +176,12 @@
 
       <div class="blog-card alt">
         <div class="meta">
-          <div class="photo" style="background-image: url(<%= cl_image_path offer.photo.key, height: 300, width: 400, crop: :fill %>)"></div>
+          <div class="photo" style="background-image: url(<%= cl_image_path offer.photos.first.key, height: 300, width: 400, crop: :fill %>)"></div>
           <div class="details">
             <div class="profil">
               <div class ="rounded-circle text-center p-3">
-                <%= cl_image_tag current_user.photo.key, height: 100, width: 100, crop: :fill, class: "rounded-circle opacity"%>
-                <h5 class="p-3 author"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+                <%= cl_image_tag offer.user.photo.key, height: 80, width: 80, crop: :fill, class: "rounded-circle opacity"%>
+                <h5 class="p-3 text-white author"><%= offer.user.first_name %> <%= offer.user.last_name %></h5>
               </div>
             </div>
           </div>
@@ -169,7 +208,7 @@
     <div class="geocode">
       <div
       id="map"
-      style="width: 100%;
+      style="width: 580px;
       height: 650px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -180,6 +219,20 @@
 
 
 <% else %>
+
+<div class="m-4">
+<%= form_tag offers_path, method: :get do %>
+  <div class="d-flex">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Marseille"
+    %>
+    <%= submit_tag "Search", class: "btn btn-warning" %>
+
+  </div>
+<% end %>
+</div>
 
 <h2 class="p-3 font-weight-light text-warning">We're sorry, there is no guide yet..</h2>
 

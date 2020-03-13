@@ -12,7 +12,9 @@
     <%= f.input :duration_in_hours, collection: (1..8), placeholder: '2' %>
   </div>
 </div>
-  <div class=" border-bottom border-top m-4 p-3"><%= f.input :photo, as: :file %></div>
-  <%= f.submit "Update", class: "btn btn-warning form-control" %>
+  <div class=" border-bottom border-top m-4 p-3">
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  </div>
+  <%= f.submit "Add", class: "btn btn-warning form-control" %>
   <% end %>
 

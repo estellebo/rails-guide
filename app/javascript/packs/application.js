@@ -1,4 +1,5 @@
 import "bootstrap";
+import "../plugins/flatpickr"
 
 import { fixFooter } from './plugins/footer';
 import 'mapbox-gl/dist/mapbox-gl.css';

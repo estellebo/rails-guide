@@ -1,6 +1,6 @@
 <div class="dashboard-content container-fluid">
 
-  <h1 class="text-center font-weight-bold p-5"> <i class="far fa-calendar-alt"></i> My Dashboard </h1>
+  <h1 class="text-center text-warning font-weight-light p-5"> <i class="far fa-calendar-alt"></i> My Dashboard </h1>
 
 
   <div class="row">
@@ -18,17 +18,23 @@
               <div class="card m-4">
 
                 <%= link_to offer_path(offer) do %>
-                <% if offer.photo.attached? %>
-                  <div class="card-picture">
-                    <%= cl_image_tag offer.photo.key, height: 150, width: 210, crop: :fill %>
-                  </div>
-                <% else %>
-                  <div class="bg-secondary picture" style="height: 150px;"></div>
-                <% end %>
+                    <%= cl_image_tag offer.photos.first.key, height: 150, width: 210, crop: :fill %>
 
-                <div class="bg-light" style="height: 54px;">
-                  <h6 class="p-2 text-center text-warning text-capitalize font-weight-light"><%= offer.title %></h6>
+                <div class="" style="height: 54px;">
+                  <h6 class="p-2 infos-title text-capitalize m-4 border-bottom"><%= offer.title %></h6>
                 </div>
+
+                <div class="d-flex align-item-center justify-content-center justify-content-around mt-3">
+                  <div class="infos">
+                    <div class="d-flex"> <i class="icon fas fa-dollar-sign text-warning"></i> <p class="m-1"><%= offer.price %></p></div>
+                    <p>Dollars</p>
+                  </div>
+                  <div class="infos">
+                    <div class="d-flex"> <i class="icon fas fa-clock text-warning"></i> <p class="m-1"> <%=offer.duration_in_hours%></p></div>
+                    <p>Hours</p>
+                  </div>
+                </div>
+                <p class= "p-3"><%= offer.content %></p>
                 <% end%>
 
               </div>
@@ -58,11 +64,30 @@
             <p class = "m-4 font-weight-light text-warning">You have nothing planned. Start looking for ideas for your next trip. </p>
           <% else %>
             <% current_user.bookings.each do |booking| %>
-            <div class="col-4">
-              <div class="card">
-               <%= link_to booking_path(booking) do %>
-                <p class="content"> <%= booking.offer.title %> à <%= booking.offer.city %> le <%= booking.date %> avec <%= booking.offer.user.first_name %></p>
-                <% end %>
+            <div class="col-6">
+              <div class="card text-decoration-none m-4">
+
+                <%= link_to booking_path(booking) do %>
+                    <%= cl_image_tag booking.offer.photos.first.key, height: 150, width: 210, crop: :fill %>
+                    <%= cl_image_tag booking.offer.user.photo.key, height: 40, width: 40, crop: :fill, class: "dashboard-avatar" %>
+
+                <div class="" style="height: 54px;">
+                  <h6 class="p-2 infos-title text-capitalize m-4 border-bottom"><%= booking.offer.title %></h6>
+                </div>
+
+                <div class="d-flex align-item-center justify-content-center justify-content-around mt-3">
+                  <div class="infos">
+                    <div class="d-flex"> <i class="icon fas fa-dollar-sign text-warning"></i> <p class="m-1"><%= booking.offer.price %></p></div>
+                    <p>Dollars</p>
+                  </div>
+                  <div class="infos">
+                    <div class="d-flex"> <i class="icon fas fa-clock text-warning"></i> <p class="m-1"> <%=booking.offer.duration_in_hours%></p></div>
+                    <p>Hours</p>
+                  </div>
+                </div>
+                <p class= "p-3"><%= booking.offer.content %></p>
+                <% end%>
+
               </div>
             </div>
             <% end %>

@@ -8,7 +8,40 @@
   box-shadow: 1px 1px 10px 0px rgba(0,0,0,.4);
 }
 
+.card{
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,.4);
+  position: relative;
+  .dashboard-avatar{
+    margin: 10px;
+    box-shadow: 1px 1px 10px 0px rgba(0,0,0,.4);
+    border: 1px solid white;
+    position: absolute;
+    border-radius: 50%;
+    top:0;
+    left:0;
+  }
+}
+
 .container-fluid{
   background-color: #ededed;
   margin: 0;
+}
+
+.none{
+  text-decoration: none;
+}
+
+.infos{
+  padding: 10px;
+  font-size: 15px;
+  color: black;
+}
+
+.icon{
+  font-size: 3px;
+}
+
+.infos-title{
+  font-size: 18px;
+  color: black;
 }

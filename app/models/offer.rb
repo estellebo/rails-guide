@@ -12,8 +12,8 @@ class Offer < ApplicationRecord
   belongs_to :user
   has_one :booking
 
-  has_one_attached :photo
-  validates :photo, attached: true
+  has_many_attached :photos
+  # validates :photos, attached: true
 
   validates :user, presence: true
   validates :meeting_place, presence: true

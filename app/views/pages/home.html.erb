@@ -1,9 +1,9 @@
 <div class="text-center">
-  <div class="bg mb-8">
+  <div class="bg mb-5">
     <div class="banner-content">
       <div class=mb-4>
-        <h3 class="welcome">FIND A LOCAL</h3>
-        <h5 class="text-left text-white pb-2"> And start a new experience with a local expert</h5>
+        <h3 class="welcome">Travel like a local, live experiencies</h3>
+        <h5 class="find text-left text-white pb-2">Find a guide</h5>
       </div>
         <%= form_tag offers_path, method: :get do %>
           <div class="d-flex">
@@ -12,8 +12,11 @@
             class: "form-control",
             placeholder: "Marseille"
           %>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
+          <%= submit_tag "Search", class: "btn btn-warning" %>
         </div>
+      <% end %>
+      <%= link_to offers_path do %>
+      <h5 class="all-offers font-weight-light mt-4 text-left">All the offers</h5>
       <% end %>
     </div>
   </div>
